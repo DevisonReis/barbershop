@@ -1,0 +1,510 @@
+.df-spl-edit-nav {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 9px 10px rgb(189 189 189 / 05%);
+	margin-top:20px;
+	margin-right:20px;
+}
+.nav>li>a {
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+}
+.nav>li {
+	margin-bottom: 0;
+}
+@media (min-width: 768px) {
+	.price_wrapper .navbar-nav>li>a {
+		padding-top: 28px;
+		padding-bottom: 28px;
+	}
+	.price_wrapper .navbar-nav>li>.main-save.spl_btn_primary>p.submit {
+		padding-top: 28px;
+		padding-bottom: 28px;
+	}
+}
+@media (max-width: 1161px) {
+	.price_wrapper .navbar-secondary .navbar-nav>li>a, .price_wrapper .navbar-secondary .navbar-nav>li>a:focus, .price_wrapper .navbar-secondary .navbar-nav>li>a:hover{
+		font-size: 10px;
+	}
+}
+.price_wrapper .edit-page-nav>li>a {
+	font-weight: bold;
+	text-decoration: auto;
+}
+.df-spl-nav-menu-buttons{
+	font-size:16px;
+	font-weight: bold;
+}
+.df-spl-edit-nav.nav-secondary a {
+	font-weight: bold;
+	cursor: pointer;
+	color: #777;
+}
+.edit-page-nav.navbar-right {
+	cursor: pointer;
+}
+.df-spl-edit-nav.nav-secondary a:hover {
+	color: #333;
+}
+.spl_btn_primary.main-save p.submit {
+	margin: 0;
+	padding: 0;
+}
+div#style5_category_container {
+	padding: 0;
+}
+.select-right-icon {
+	pointer-events: none;
+	position: absolute;
+	top: 5px;
+	bottom: 0;
+	left: auto;
+	right: 0;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+}
+nav.navbar.navbar-secondary.df-spl-edit-nav {
+	margin-right: 5px;
+}
+.price_wrapper .navbar-secondary .navbar-nav>li>a {
+	color: #777;
+	line-height: 40px;
+}
+.price_wrapper .navbar-secondary .navbar-nav>li>a:focus, .price_wrapper .navbar-secondary .navbar-nav>li>a:hover {
+	color: #333;
+	background-color: transparent;
+}
+div#preview_content {
+	max-width: 900px;
+	background: #fff;
+	padding: 20px;
+	margin-top: 10px;
+}
+p.submit input.button{
+	padding-right:30px;
+	padding-left:30px;
+}
+p.free_version {
+	font-size: 16px;
+	background: #e2f1e7;
+	padding: 20px;
+	border-radius: 20px;
+	margin-left: -15px;
+	box-shadow: 0px 0px 9px 10px rgb(189 189 189 / 5%);
+}
+.free_version a{
+	color:orange;
+}
+div#sortable {
+	border: none;
+	background: none;
+}
+
+.spl-preview .style-8-container {
+	margin: 10px;
+}
+
+.modalsupport,
+.modalvideos {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 105px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: #000;
+	background-color: rgba(0, 0, 0, .4);
+	z-index: 9999 !important;
+}
+.closesupport,
+.closevideo {
+	float: right;
+	font-size: 28px;
+	font-weight: 700
+}
+.closesupport {
+	color: #5bb3a7
+}
+.closesupport:focus,
+.closesupport:hover {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer
+}
+.df-spl-row.cats-row.more_setting input[type="radio"] {
+	display: block
+}
+.scc-modal-content-support, .scc-modal-content-videos {
+	background-color: rgba(245, 245, 245, .95);
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 100%
+}
+
+.scc-modal-content-videos {
+	max-width: 1200px
+}
+
+.price_wrapper .df-spl-modal {
+	top: 100px;
+}
+.spl_service_button_enable {
+	font-family: FontAwesome;
+}
+
+.text-decoration-none {
+	text-decoration: none;
+}
+
+#myModalVideos {
+	padding-top: 40px !important
+}
+#myModalVideos .scc-modal-content-videos {
+	max-width: 800px !important;
+	padding: 10px 20px 10px !important
+}
+#myModalVideos .spl_video_tutorial iframe {
+	max-height: 400px !important;
+	min-height: 365px !important
+}
+
+.service-price-length {
+	display: block;
+	width: 100%;
+	clear: both;
+	margin: 15px 0;
+}
+.price_wrapper .service-price-length .lbl {
+	text-align: left
+}
+.service-price-length label {
+	color: #666;
+	margin: 0
+}
+.service-price-length .lbl {
+	line-height: 30px
+}
+.title-list-style {
+	border-radius: 6px;
+	margin-bottom: 30px;
+	min-height: 270px;
+	background: #fff;
+	padding-bottom:10px;
+}
+.title-list-style .col-md-12 {
+	border-bottom: 1px solid #dedede;
+	margin-bottom: 15px
+}
+.title-list-style .wp-picker-container .button span {
+	height: 22px
+}
+.title-list-style .wp-picker-container .button {
+	width: 100%;
+	height: 30px
+}
+
+input[type=radio] {
+	z-index: 9999;
+	position: relative;
+	opacity: 0;
+	float: left;
+	width: 25px;
+	height: 21px;
+	top: -3px
+}
+input[type=radio]:checked+label.radio-inline span {
+	background-color: #5bb3a7;
+	transform: scale(1.25)
+}
+input[type=radio]:checked+label.radio-inline span:before {
+	width: 6px;
+	background: #fff;
+	transition: width 150ms ease .1s
+}
+input[type=radio]:checked+label.radio-inline span:after {
+	width: 11px;
+	background: #fff;
+	transition: width 150ms ease .1s
+}
+
+.custom_radio_btn {
+	display: inline-block;
+	width: auto;
+	height: auto;
+	position: relative;
+	min-width: 78px;
+	vertical-align: middle;
+	text-align: center
+}
+
+.custom_radio_btn:hover label span {
+	background-color: #5bb3a7 !important
+}
+
+#preview,
+.google a,
+.heading-catag a {
+	text-decoration: none
+}
+.google,
+.google a,
+.heading-catag a,
+.heading-catag span,
+div#flip {
+	color: #fff
+}
+.add-category-row,
+.add-category-row:focus,
+.add-category-row:hover,
+.category-name-row label,
+.category-description-row label,
+.category-cover-image-row label {
+	color: #5bb3a7;
+	font-weight: 700
+}
+.add-remove-service,
+.add-remove-service:focus,
+.add-remove-service:hover {
+	font-weight: 700
+}
+
+.category-row,
+.cats-row {
+	margin: 15px 0
+}
+.heading-catag {
+	height: 40px;
+	line-height: 3;
+	background-color: #5bb3a7;
+	box-shadow: 0px 0px 9px 10px rgb(189 189 189 / 05%);
+	border-radius: 10px 10px 0 0;
+}
+.heading-catag a {
+	float: right;
+	text-align: left;
+	margin-left: 0;
+	border-radius: 10px 10px 0 0;
+}
+.advance_setting {
+	text-transform: uppercase
+}
+.col-md-10.padding_zero_spl,
+.col-md-2.padding_zero_spl {
+	padding: 0
+}
+.add-remove-service {
+	margin: 20px 0
+}
+.category-description-row,
+.category-name-row,
+.category-cover-image-row {
+	padding-left: 15px;
+	padding-right: 15px;
+	background: #fff;
+}
+.iris-picker.iris-border {
+	z-index: 999
+}
+.spl_btn_primary .button-primary,
+.spl_btn_primary.button-primary,
+.custom-size .button-primary {
+	background: #5bb3a7 !important;
+	border-color: #b5218f #5bb3a7 #be3b9c;
+	-webkit-box-shadow: 0 1px 0 #5bb3a7 !important;
+	box-shadow: none !important;
+	border-width: 0;
+	color: #fff;
+	font-size: 18px;
+	text-decoration: none;
+	text-shadow: 0 0 0 #df9ece, 0 0 1px #5bb3a7, 0 0 0 #5bb3a7, -1px 0 1px #5bb3a7
+}
+.spl_btn_primary .button-primary:hover,
+.spl_btn_primary.button-primary:hover,
+.custom-size .button-primary:hover {
+	background: #5bb3a7;
+	border-color: #5bb3a7;
+	color: #fff
+}
+input#fileupload {
+	font-size: inherit
+}
+.remove-category:hover {
+	color: #fff
+}
+span.all_tab_span {
+	font-size: 10px
+}
+.more_setting {
+	display: none
+}
+.content-section.name-price:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.content-section.name-price {
+	position: relative;
+}
+.price_wrapper input#fileupload {
+	width: 198px;
+	float: left
+}
+.df-spl-row.cats-row.more_setting {
+	padding-top: 10px
+}
+.category-row,
+.heading-catag {
+	padding: 0 15px
+}
+.categor-sec-first,
+.service-price-length-rows-wrapper {
+	width: 48%;
+	float: left;
+	height: 300px;
+	padding: 0 0 0px;
+	margin: 7px;
+}
+.categor-sec-first .lbl {
+	padding: 0
+}
+.categor-sec-first .ini,
+.categor-sec-first .lbl {
+	margin: 15px 0
+}
+.categor-sec-first {
+	width: 97.5%
+}
+.bottom-save p.submit input.button.button-primary[type="submit"] {
+	width: 21.8%;
+	height: 60px;
+	padding: 24px 0;
+	line-height: 0
+}
+#wpfooter,
+.form-save-and-restore,
+.more-stng-btn,
+.price_wrapper,
+.spl-header.logo,
+span .wrapper-style {
+	position: relative
+}
+.add-category-row-lbl {
+	padding-left: 7px !important
+}
+.add-new-cat {
+	margin-left:-10px;
+}
+.add-service,
+.remove-service {
+	text-align: center
+}
+footer#admin_footer {
+	display: block;
+	width: 100%;
+	float: left;
+	clear: both
+}
+.font_setting_container,
+.hide-right {
+	display: none
+}
+.back-up {
+	margin-top: 23px !important;
+	max-width: 60%;
+	margin: 0 auto
+}
+.df-spl-row.category-row.ui-widget-content .bg-sort-ghost{
+	background-color: #5bb3a7;
+}
+.df-spl-row.category-row.ui-widget-content .sortable-chosen {
+	border: 2px #008000 solid;
+}
+
+
+
+
+/* starting media queries */
+@media only screen and (min-width:1024px) {
+	.categor-sec-first,
+	.service-price-length-rows-wrapper {
+		height: auto !important;
+		box-shadow: 0px 0px 9px 10px rgb(189 189 189 / 05%);
+		background-color: #fff;
+	}
+}
+@media screen and (max-width:320px) {
+	.categor-sec-first {
+		height: 305px !important;
+		border: 1px solid #F9F9F9 !important
+	}
+	.service-price-length-rows-wrapper {
+		height: 415px !important;
+		border: 1px solid #F9F9F9 !important;
+		background-color: #fff;
+	}
+	.price_wrapper .service-price-length .lbl {
+		text-align: left;
+		padding: 0 7px
+	}
+}
+@media(min-width:320px) and (max-width:500px) {
+	.custom_radio_btn {
+		min-width: 65px !important
+	}
+}
+@media screen and (max-width:414px) {
+	.add-remove-service a {
+		font-size: 12px !important
+	}
+}
+@media screen and (min-width:992px) {
+	.padl-align {
+		padding-left: 22px !important
+	}
+}
+
+@media screen and (min-width:321px) and (max-width:480px) {
+	div#panel .service-price-length-rows-wrapper {
+		height: auto !important;
+		border: 1px solid #F9F9F9 !important
+	}
+	div#panel ul li {
+		left: -35px !important
+	}
+	.google,
+	.service-price-length-rows-wrapper,
+	div#panel .categor-sec-first {
+		height: auto !important
+	}
+}
+@media(min-width:320px) and (max-width:768px) {
+	.categor-sec-first,
+	.service-price-length-rows-wrapper {
+		width: 100% !important;
+		background-color: #fff;
+	}
+}
+
+@media(min-width:320px) and (max-width:480px) {
+	.bottom-save p.submit input.button.button-primary[type="submit"] {
+		width: 100% !important
+	}
+}
+
+@media(min-width:481px) and (max-width:600px) {
+	.bottom-save p.submit input.button.button-primary[type="submit"] {
+		width: 100% !important
+	}
+}
+@media(min-width:601px) and (max-width:768px) {
+	.bottom-save p.submit input.button.button-primary[type="submit"] {
+		width: 22% !important
+	}
+}

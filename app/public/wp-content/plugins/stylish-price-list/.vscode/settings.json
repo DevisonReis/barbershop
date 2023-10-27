@@ -1,0 +1,16 @@
+{
+    "favorites.resources": [
+        {
+            "filePath": "stylish-price-list.php",
+            "group": "Default"
+        },
+        {
+            "filePath": "readme.txt",
+            "group": "Default"
+        },
+        {
+            "filePath": "changelog.txt",
+            "group": "Default"
+        }
+    ]
+}

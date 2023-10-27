@@ -1,0 +1,167 @@
+[15-Aug-2023 00:20:17 UTC] Erro de evento de reagendamento do cron para o gancho: ewww_image_optimizer_relative_migration, código de erro: invalid_schedule, mensagem de erro: Agendamento do evento não existe., dados: {"schedule":"ewwwio_relative_migration_interval","args":[],"interval":300}
+[15-Aug-2023 00:53:46 UTC] Sync process for Gutenberg Blocks has started.
+[15-Aug-2023 00:53:46 UTC] CATEGORY:Importing categories..
+[15-Aug-2023 00:53:46 UTC] CATEGORY:Storing in option ast-block-templates-categories
+[15-Aug-2023 00:53:46 UTC] CATEGORY:Completed category import.
+[15-Aug-2023 00:53:46 UTC] BLOCK: Getting Total Blocks
+[15-Aug-2023 00:53:46 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/get-blocks-count/?page_builder=gutenberg&wireframe=yes
+[15-Aug-2023 00:53:46 UTC] BLOCK: Requests count 4
+[15-Aug-2023 00:53:46 UTC] BLOCK: Importing request 1 ..
+[15-Aug-2023 00:53:46 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=1&wireframe=yes
+[15-Aug-2023 00:53:46 UTC] BLOCK: Storing in option ast-block-templates-blocks-1
+[15-Aug-2023 00:53:46 UTC] BLOCK: Completed request 1
+[15-Aug-2023 00:53:46 UTC] BLOCK: Importing request 2 ..
+[15-Aug-2023 00:53:46 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=2&wireframe=yes
+[15-Aug-2023 00:53:46 UTC] BLOCK: Storing in option ast-block-templates-blocks-2
+[15-Aug-2023 00:53:47 UTC] BLOCK: Completed request 2
+[15-Aug-2023 00:53:47 UTC] BLOCK: Importing request 3 ..
+[15-Aug-2023 00:53:47 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=3&wireframe=yes
+[15-Aug-2023 00:53:47 UTC] BLOCK: Storing in option ast-block-templates-blocks-3
+[15-Aug-2023 00:53:47 UTC] BLOCK: Completed request 3
+[15-Aug-2023 00:53:47 UTC] BLOCK: Importing request 4 ..
+[15-Aug-2023 00:53:47 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=4&wireframe=yes
+[15-Aug-2023 00:53:47 UTC] BLOCK: Storing in option ast-block-templates-blocks-4
+[15-Aug-2023 00:53:47 UTC] BLOCK: Completed request 4
+[15-Aug-2023 00:53:47 UTC] SITE: Getting Total Sites
+[15-Aug-2023 00:53:47 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/get-total-pages/?page_builder=gutenberg
+[15-Aug-2023 00:53:47 UTC] SITE: Request count 2
+[15-Aug-2023 00:53:47 UTC] SITE: Importing request 1 ..
+[15-Aug-2023 00:53:47 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/sites-and-pages/?per_page=100&page=1&page-builder=gutenberg
+[15-Aug-2023 00:53:47 UTC] SITE: Storing in option ast-block-templates-sites-1
+[15-Aug-2023 00:53:47 UTC] SITE: Completed request 1
+[15-Aug-2023 00:53:47 UTC] SITE: Importing request 2 ..
+[15-Aug-2023 00:53:47 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/sites-and-pages/?per_page=100&page=2&page-builder=gutenberg
+[15-Aug-2023 00:53:48 UTC] SITE: Storing in option ast-block-templates-sites-2
+[15-Aug-2023 00:53:48 UTC] SITE: Completed request 2
+[15-Aug-2023 00:53:48 UTC] Sync process for Gutenberg Blocks is done.
+[16-Aug-2023 00:21:15 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string / int in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/ultimate-addons-for-elementor/widgets/info-list.php:470
+Stack trace:
+#0 /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/elementor/includes/base/controls-stack.php(2243): Elementor_uae_info_list->render()
+#1 /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/elementor/includes/base/widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
+#2 /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/elementor/core/base/document.php(292): Elementor\Widget_Base->render_content()
+#3 /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/elementor/includes/managers/widgets.php(445): Elementor\Core\Base\Document->render_element(Array)
+#4 [internal function]: Elementor\Widgets_Manager->ajax_render_widget(Array, Object(Elementor\Core\Common\Modules\Ajax\Module))
+#5 /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/elementor/core/common/modules/ajax/module.php(175): call_user_func(Array, Array, Object(Elementor\Core\Common\Modules\Ajax\Module))
+#6 /home/devisonreis/Local Sites/barbershop/app/public/wp-includes/class-wp-hook.php(310): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request('')
+#7 /home/devisonreis/Local Sites/barbershop/app/public/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters(NULL, Array)
+#8 /home/devisonreis/Local Sites/barbershop/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#9 /home/devisonreis/Local Sites/barbershop/app/public/wp-admin/admin-ajax.php(188): do_action('wp_ajax_element...')
+#10 {main}
+  thrown in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/ultimate-addons-for-elementor/widgets/info-list.php on line 470
+[16-Aug-2023 00:21:59 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string / int in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/ultimate-addons-for-elementor/widgets/info-list.php:470
+Stack trace:
+#0 /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/elementor/includes/base/controls-stack.php(2243): Elementor_uae_info_list->render()
+#1 /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/elementor/includes/base/widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
+#2 /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/elementor/core/base/document.php(292): Elementor\Widget_Base->render_content()
+#3 /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/elementor/includes/managers/widgets.php(445): Elementor\Core\Base\Document->render_element(Array)
+#4 [internal function]: Elementor\Widgets_Manager->ajax_render_widget(Array, Object(Elementor\Core\Common\Modules\Ajax\Module))
+#5 /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/elementor/core/common/modules/ajax/module.php(175): call_user_func(Array, Array, Object(Elementor\Core\Common\Modules\Ajax\Module))
+#6 /home/devisonreis/Local Sites/barbershop/app/public/wp-includes/class-wp-hook.php(310): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request('')
+#7 /home/devisonreis/Local Sites/barbershop/app/public/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters(NULL, Array)
+#8 /home/devisonreis/Local Sites/barbershop/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#9 /home/devisonreis/Local Sites/barbershop/app/public/wp-admin/admin-ajax.php(188): do_action('wp_ajax_element...')
+#10 {main}
+  thrown in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/ultimate-addons-for-elementor/widgets/info-list.php on line 470
+[16-Aug-2023 00:22:28 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string / int in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/ultimate-addons-for-elementor/widgets/info-list.php:470
+Stack trace:
+#0 /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/elementor/includes/base/controls-stack.php(2243): Elementor_uae_info_list->render()
+#1 /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/elementor/includes/base/widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
+#2 /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/elementor/core/base/document.php(292): Elementor\Widget_Base->render_content()
+#3 /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/elementor/includes/managers/widgets.php(445): Elementor\Core\Base\Document->render_element(Array)
+#4 [internal function]: Elementor\Widgets_Manager->ajax_render_widget(Array, Object(Elementor\Core\Common\Modules\Ajax\Module))
+#5 /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/elementor/core/common/modules/ajax/module.php(175): call_user_func(Array, Array, Object(Elementor\Core\Common\Modules\Ajax\Module))
+#6 /home/devisonreis/Local Sites/barbershop/app/public/wp-includes/class-wp-hook.php(310): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request('')
+#7 /home/devisonreis/Local Sites/barbershop/app/public/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters(NULL, Array)
+#8 /home/devisonreis/Local Sites/barbershop/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#9 /home/devisonreis/Local Sites/barbershop/app/public/wp-admin/admin-ajax.php(188): do_action('wp_ajax_element...')
+#10 {main}
+  thrown in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/ultimate-addons-for-elementor/widgets/info-list.php on line 470
+[16-Aug-2023 01:28:06 UTC] PHP Warning:  Undefined variable $featured_button in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/abc-pricing-table/abc-pricing-table.php on line 251
+[16-Aug-2023 01:28:06 UTC] PHP Warning:  Undefined variable $pricing_price in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/abc-pricing-table/abc-pricing-table.php on line 253
+[16-Aug-2023 01:28:06 UTC] PHP Warning:  Undefined variable $pricing_plan in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/abc-pricing-table/abc-pricing-table.php on line 254
+[16-Aug-2023 01:28:06 UTC] PHP Warning:  Undefined variable $pricing_features in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/abc-pricing-table/abc-pricing-table.php on line 255
+[16-Aug-2023 01:28:06 UTC] PHP Warning:  Undefined variable $pricing_btn_text in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/abc-pricing-table/abc-pricing-table.php on line 256
+[16-Aug-2023 01:28:06 UTC] PHP Warning:  Undefined variable $pricing_btn_url in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/abc-pricing-table/abc-pricing-table.php on line 257
+[16-Aug-2023 01:28:06 UTC] PHP Warning:  Undefined variable $pricing_icon_pick in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/abc-pricing-table/abc-pricing-table.php on line 258
+[16-Aug-2023 01:28:24 UTC] PHP Warning:  Undefined variable $columns in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/abc-pricing-table/abc-pricing-table.php on line 82
+[16-Aug-2023 01:28:24 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/abc-pricing-table/abc-pricing-table.php on line 82
+[16-Aug-2023 01:28:29 UTC] PHP Warning:  Undefined variable $columns in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/abc-pricing-table/abc-pricing-table.php on line 82
+[16-Aug-2023 01:28:29 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/abc-pricing-table/abc-pricing-table.php on line 82
+[19-Aug-2023 03:59:50 UTC] Sync process for Gutenberg Blocks has started.
+[19-Aug-2023 03:59:50 UTC] CATEGORY:Importing categories..
+[19-Aug-2023 03:59:50 UTC] CATEGORY:Storing in option ast-block-templates-categories
+[19-Aug-2023 03:59:50 UTC] CATEGORY:Completed category import.
+[19-Aug-2023 03:59:50 UTC] BLOCK: Getting Total Blocks
+[19-Aug-2023 03:59:50 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/get-blocks-count/?page_builder=gutenberg&wireframe=yes
+[19-Aug-2023 03:59:50 UTC] BLOCK: Requests count 4
+[19-Aug-2023 03:59:50 UTC] BLOCK: Importing request 1 ..
+[19-Aug-2023 03:59:50 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=1&wireframe=yes
+[19-Aug-2023 03:59:50 UTC] BLOCK: Storing in option ast-block-templates-blocks-1
+[19-Aug-2023 03:59:50 UTC] BLOCK: Completed request 1
+[19-Aug-2023 03:59:50 UTC] BLOCK: Importing request 2 ..
+[19-Aug-2023 03:59:50 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=2&wireframe=yes
+[19-Aug-2023 03:59:51 UTC] BLOCK: Storing in option ast-block-templates-blocks-2
+[19-Aug-2023 03:59:51 UTC] BLOCK: Completed request 2
+[19-Aug-2023 03:59:51 UTC] BLOCK: Importing request 3 ..
+[19-Aug-2023 03:59:51 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=3&wireframe=yes
+[19-Aug-2023 03:59:51 UTC] BLOCK: Storing in option ast-block-templates-blocks-3
+[19-Aug-2023 03:59:51 UTC] BLOCK: Completed request 3
+[19-Aug-2023 03:59:51 UTC] BLOCK: Importing request 4 ..
+[19-Aug-2023 03:59:51 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=4&wireframe=yes
+[19-Aug-2023 03:59:51 UTC] BLOCK: Storing in option ast-block-templates-blocks-4
+[19-Aug-2023 03:59:51 UTC] BLOCK: Completed request 4
+[19-Aug-2023 03:59:51 UTC] SITE: Getting Total Sites
+[19-Aug-2023 03:59:51 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/get-total-pages/?page_builder=gutenberg
+[19-Aug-2023 03:59:51 UTC] SITE: Request count 2
+[19-Aug-2023 03:59:51 UTC] SITE: Importing request 1 ..
+[19-Aug-2023 03:59:51 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/sites-and-pages/?per_page=100&page=1&page-builder=gutenberg
+[19-Aug-2023 03:59:52 UTC] SITE: Storing in option ast-block-templates-sites-1
+[19-Aug-2023 03:59:52 UTC] SITE: Completed request 1
+[19-Aug-2023 03:59:52 UTC] SITE: Importing request 2 ..
+[19-Aug-2023 03:59:52 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/sites-and-pages/?per_page=100&page=2&page-builder=gutenberg
+[19-Aug-2023 03:59:52 UTC] SITE: Storing in option ast-block-templates-sites-2
+[19-Aug-2023 03:59:52 UTC] SITE: Completed request 2
+[19-Aug-2023 03:59:52 UTC] Sync process for Gutenberg Blocks is done.
+[02-Sep-2023 03:42:39 UTC] Sync process for Gutenberg Blocks has started.
+[02-Sep-2023 03:42:39 UTC] CATEGORY:Importing categories..
+[02-Sep-2023 03:42:39 UTC] CATEGORY:Storing in option ast-block-templates-categories
+[02-Sep-2023 03:42:39 UTC] CATEGORY:Completed category import.
+[02-Sep-2023 03:42:39 UTC] BLOCK: Getting Total Blocks
+[02-Sep-2023 03:42:39 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/get-blocks-count/?page_builder=gutenberg&wireframe=yes
+[02-Sep-2023 03:42:40 UTC] BLOCK: Requests count 4
+[02-Sep-2023 03:42:40 UTC] BLOCK: Importing request 1 ..
+[02-Sep-2023 03:42:40 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=1&wireframe=yes
+[02-Sep-2023 03:42:40 UTC] BLOCK: Storing in option ast-block-templates-blocks-1
+[02-Sep-2023 03:42:40 UTC] BLOCK: Completed request 1
+[02-Sep-2023 03:42:40 UTC] BLOCK: Importing request 2 ..
+[02-Sep-2023 03:42:40 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=2&wireframe=yes
+[02-Sep-2023 03:42:40 UTC] BLOCK: Storing in option ast-block-templates-blocks-2
+[02-Sep-2023 03:42:40 UTC] BLOCK: Completed request 2
+[02-Sep-2023 03:42:40 UTC] BLOCK: Importing request 3 ..
+[02-Sep-2023 03:42:40 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=3&wireframe=yes
+[02-Sep-2023 03:42:40 UTC] BLOCK: Storing in option ast-block-templates-blocks-3
+[02-Sep-2023 03:42:40 UTC] BLOCK: Completed request 3
+[02-Sep-2023 03:42:40 UTC] BLOCK: Importing request 4 ..
+[02-Sep-2023 03:42:40 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=4&wireframe=yes
+[02-Sep-2023 03:42:41 UTC] BLOCK: Storing in option ast-block-templates-blocks-4
+[02-Sep-2023 03:42:41 UTC] BLOCK: Completed request 4
+[02-Sep-2023 03:42:41 UTC] SITE: Getting Total Sites
+[02-Sep-2023 03:42:41 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/get-total-pages/?page_builder=gutenberg
+[02-Sep-2023 03:42:41 UTC] SITE: Request count 2
+[02-Sep-2023 03:42:41 UTC] SITE: Importing request 1 ..
+[02-Sep-2023 03:42:41 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/sites-and-pages/?per_page=100&page=1&page-builder=gutenberg
+[02-Sep-2023 03:42:41 UTC] SITE: Storing in option ast-block-templates-sites-1
+[02-Sep-2023 03:42:41 UTC] SITE: Completed request 1
+[02-Sep-2023 03:42:41 UTC] SITE: Importing request 2 ..
+[02-Sep-2023 03:42:41 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/sites-and-pages/?per_page=100&page=2&page-builder=gutenberg
+[02-Sep-2023 03:42:41 UTC] SITE: Storing in option ast-block-templates-sites-2
+[02-Sep-2023 03:42:41 UTC] SITE: Completed request 2
+[02-Sep-2023 03:42:41 UTC] Sync process for Gutenberg Blocks is done.
+[02-Sep-2023 05:22:44 UTC] PHP Warning:  Undefined array key "pa_tooltip_class" in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/premium-addons-for-elementor/modules/premium-global-tooltips/module.php on line 1231
+[02-Sep-2023 05:23:07 UTC] PHP Warning:  Undefined array key "pa_tooltip_class" in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/premium-addons-for-elementor/modules/premium-global-tooltips/module.php on line 1231
+[02-Sep-2023 05:23:10 UTC] PHP Warning:  Undefined array key "pa_tooltip_class" in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/premium-addons-for-elementor/modules/premium-global-tooltips/module.php on line 1231
+[02-Sep-2023 05:24:56 UTC] PHP Warning:  Undefined array key "pa_tooltip_class" in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/premium-addons-for-elementor/modules/premium-global-tooltips/module.php on line 1231
+[02-Sep-2023 05:25:02 UTC] PHP Warning:  Undefined array key "pa_tooltip_class" in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/premium-addons-for-elementor/modules/premium-global-tooltips/module.php on line 1231
+[02-Sep-2023 15:42:15 UTC] PHP Warning:  Undefined property: stdClass::$error in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/stratum/includes/token-manager.php on line 72
+[07-Oct-2023 03:20:43 UTC] PHP Warning:  Undefined property: stdClass::$error in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/stratum/includes/token-manager.php on line 72
+[17-Oct-2023 02:05:03 UTC] PHP Warning:  Undefined property: stdClass::$error in /home/devisonreis/Local Sites/barbershop/app/public/wp-content/plugins/stratum/includes/token-manager.php on line 72
