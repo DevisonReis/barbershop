@@ -218,11 +218,14 @@ jQuery(document).ready(function($) {
 	$('.btn-download-reviews').on('click', function(event) {
 		event.preventDefault();
 
+		let btn = jQuery(this);
+
 		TrustindexConnect.asyncRequest(function(token, request_id, manual_download, place) {
 			if (place) {
 				$.ajax({
 					type: 'POST',
 					data: {
+						_wpnonce: btn.data('nonce'),
 						page_details: JSON.stringify(place),
 						review_download_timestamp: place.timestamp
 					}
@@ -232,13 +235,14 @@ jQuery(document).ready(function($) {
 				$.ajax({
 					type: 'POST',
 					data: {
+						_wpnonce: btn.data('nonce'),
 						review_download_request: token,
 						review_download_request_id: request_id,
 						manual_download: manual_download
 					}
 				}).always(() => location.reload());
 			}
-		}, $(this));
+		}, btn);
 	});
 
 	// manual download
@@ -251,7 +255,10 @@ jQuery(document).ready(function($) {
 		$.ajax({
 			url: location.search.replace(/&tab=[^&]+/, '&tab=setup_no_reg'),
 			type: 'POST',
-			data: { command: 'review-manual-download' },
+			data: {
+				command: 'review-manual-download',
+				_wpnonce: btn.data('nonce')
+			},
 			success: () => location.reload(),
 			error: function() {
 				btn.removeClass('btn-loading');

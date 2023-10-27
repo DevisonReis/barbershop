@@ -128,10 +128,6 @@ class Module {
 			wp_enqueue_script( 'lottie-js' );
 		}
 
-		if ( ! wp_script_is( 'lottie-js', 'enqueued' ) ) {
-			wp_enqueue_script( 'lottie-js' );
-		}
-
 		if ( ! wp_script_is( 'pa-tweenmax', 'enqueued' ) ) {
 			wp_enqueue_script( 'pa-tweenmax' );
 		}

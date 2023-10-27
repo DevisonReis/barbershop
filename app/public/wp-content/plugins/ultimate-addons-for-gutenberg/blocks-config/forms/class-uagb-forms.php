@@ -98,8 +98,8 @@ if ( ! class_exists( 'UAGB_Forms' ) ) {
 		/**
 		 * Return array of validated attributes.
 		 *
-		 * @param array $block_attr of Block.
-		 * @param int   $block_id of Block.
+		 * @param array  $block_attr of Block.
+		 * @param string $block_id of Block.
 		 * @since 2.6.2
 		 * @return array
 		 */
@@ -124,8 +124,8 @@ if ( ! class_exists( 'UAGB_Forms' ) ) {
 		 * @since 2.3.5
 		 * @access private
 		 *
-		 * @param  array $blocks_array Block Array.
-		 * @param  int   $block_id of Block.
+		 * @param  array  $blocks_array Block Array.
+		 * @param  string $block_id of Block.
 		 *
 		 * @return mixed $recursive_inner_forms inner blocks Array.
 		 */
@@ -216,6 +216,9 @@ if ( ! class_exists( 'UAGB_Forms' ) ) {
 						$template_content      = parse_blocks( $template_post_content );
 						if ( get_template() === $template->theme && ! empty( $template_content ) && is_array( $template_content ) ) {
 							$current_block_attributes = $this->recursive_inner_forms( $template_content, $block_id );
+							if ( is_array( $current_block_attributes ) && $current_block_attributes['block_id'] === $block_id ) {
+								break;
+							}
 						}
 					}
 				}
@@ -236,8 +239,9 @@ if ( ! class_exists( 'UAGB_Forms' ) ) {
 				}
 			}
 
-			if ( defined( 'ASTRA_ADVANCED_HOOKS_POST_TYPE' ) ) {
-				
+			// Check for $current_block_attributes is not set and check for Advanced Hooks.
+			if ( empty( $current_block_attributes ) && defined( 'ASTRA_ADVANCED_HOOKS_POST_TYPE' ) ) {
+
 				$option = array(
 					'location'  => 'ast-advanced-hook-location',
 					'exclusion' => 'ast-advanced-hook-exclusion',
@@ -260,9 +264,11 @@ if ( ! class_exists( 'UAGB_Forms' ) ) {
 						$post_content = $custom_post->post_content;
 						if ( has_block( 'uagb/forms', $post_content ) ) {
 							$blocks = parse_blocks( $post_content );
-							if ( ! empty( $blocks[0]['attrs']['block_id'] ) ) {
-								$block_id                 = $blocks[0]['attrs']['block_id'];
+							if ( ! empty( $blocks ) && is_array( $blocks ) ) {
 								$current_block_attributes = $this->recursive_inner_forms( $blocks, $block_id );
+								if ( is_array( $current_block_attributes ) && $current_block_attributes['block_id'] === $block_id ) {
+									break;
+								}
 							}
 						}
 					}               
@@ -271,6 +277,10 @@ if ( ! class_exists( 'UAGB_Forms' ) ) {
 
 			if ( empty( $current_block_attributes ) ) {
 				wp_send_json_error( 400 );
+			}
+			$admin_email = get_option( 'admin_email' );
+			if ( is_array( $current_block_attributes ) && isset( $current_block_attributes['afterSubmitToEmail'] ) && empty( trim( $current_block_attributes['afterSubmitToEmail'] ) ) && is_string( $admin_email ) ) {
+				$current_block_attributes['afterSubmitToEmail'] = sanitize_email( $admin_email );
 			}
 			if ( ! isset( $current_block_attributes['reCaptchaType'] ) ) {
 				$current_block_attributes['reCaptchaType'] = 'v2';

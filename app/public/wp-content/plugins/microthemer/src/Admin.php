@@ -189,6 +189,8 @@ class Admin {
 
     private $errorsRequiringData = array(
 		//'frontend.js|306|7|Uncaught ReferenceError: consol is not defined' => 1 // paste error key(s) here
+        'microthemer.js|3164|15|Uncaught TypeError: $obj.attr is not a function',
+        "deps.js|1|616362|Uncaught TypeError: Cannot read properties of undefined (reading 'split')"
 	);
 
 	function __construct(){
@@ -7401,13 +7403,14 @@ class Admin {
 
 
 		$fhtml = !empty($arr['data-fhtml']) ? ' data-fhtml="'.$arr['data-fhtml'].'" ' : '';
+		$noSave = !empty($arr['data-no-save']) ? ' data-no-save="'.$arr['data-no-save'].'" ' : '';
 
 
 		$html = '';
 		//$html.= print_r($on, true);
 		$html.= '
 				<div '.$id.' class="mtonoffswitch mt-ui-toggle uit-par '.$on.'"
-				data-aspect="'.$item_key.'" '.$pos_neg.' '.$title.$fhtml.'>
+				data-aspect="'.$item_key.'" '.$pos_neg.' '.$title.$fhtml.$noSave.'>
 					<input type="checkbox" name="mtonoffswitch" class="mtonoffswitch-checkbox"
 					id="mymtonoffswitch-'.$item_key.'">
 					<label class="mtonoffswitch-label mt-ui-toggle" for="mymtonoffswitch-'.$item_key.'">

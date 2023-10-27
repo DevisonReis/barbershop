@@ -161,7 +161,7 @@ if ( $plugin_conflicted == null ) {
 }
 if ( $spl_license_return == 'connection refused' && $license_key_activated != 1 ) {
 	echo '<div id="border1"><span class="red_dot"></span> <span style="font-size:1em;font-weight:bold;">Pingback to server:</span>';
-	echo 'Cannot ping our activation server. Ask hosting company to add our I.P to the whitelist. IP = 104.152.168.28';
+	echo 'Cannot ping our activation server. Ask hosting company to add our I.P to the whitelist. IP = 172.67.182.34 and IP = 104.21.32.13';
 	echo '</div>';
 } else {
 	echo '<div id="border1"><span class="green_dot"></span> <span style="font-size:1em;font-weight:bold;">Pingback to server:</span> Successful';

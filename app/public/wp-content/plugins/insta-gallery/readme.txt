@@ -1,19 +1,25 @@
 === Social Feed Gallery ===
 Contributors: quadlayers
-Donate link: https://quadlayers.com/portfolio/instagram-feed-gallery/
+Donate link: https://quadlayers.com/products/instagram-feed-gallery/
 Tags: Instagram, Instagram feed, Instagram gallery, Instagram photos, Instagram widget, Instagram pictures, social media, Facebook, Twitter, YouTube
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 6.3
-Stable tag: 4.1.8
+Stable tag: 4.2.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 Formerly "Instagram Feed Gallery". This is most user-friendly and versatile plugin to display your Instagram feed on your WordPress website.
 
-== Presentation ==
+== Description ==
 
-[Premium](https://quadlayers.com/portfolio/instagram-feed-gallery/) | [Demo](https://quadlayers.com/demo/instagram-feed-gallery/) | [Documentation](https://quadlayers.com/documentation/instagram-feed-gallery/) | [Community](https://www.facebook.com/groups/quadlayers/)
+[Premium](https://quadlayers.com/products/instagram-feed-gallery/) | [Demo](https://quadlayers.com/demo/instagram-feed-gallery/) | [Documentation](https://quadlayers.com/documentation/instagram-feed-gallery/) | [Community](https://www.facebook.com/groups/quadlayers/)
+
+Social Feed Gallery is the most **user-friendly Instagram plugin for WordPress**. Designed to simplify integration and reduce the time it takes to keep your site updated, this plugin ensures you stay on track with the fast-paced world of social media.
+
+With a range of customization options and an easy-to-use interface, Social Feed Gallery is the perfect solution for displaying your Instagram feed on your WordPress site.
+
+== Presentation ==
 
 Social Feed Gallery is the ultimate plugin to integrate your **Instagram feed** seamlessly into your WordPress site. Customize the layout with gallery or carousel options and choose from a range of design features to create the perfect display for your website.
 
@@ -27,12 +33,6 @@ With its easy-to-use interface and multiple customization options, Social Feed G
 * **Optimized API usage**: Features caching to minimize requests and reduce loading time.
 * **Customizable lightbox**: Display your content with a customizable lightbox on your website.
 * **Responsive design**: Your feed will look great on any device, from desktop to mobile.
-
-== Description ==
-
-Social Feed Gallery is the most **user-friendly Instagram plugin for WordPress**. Designed to simplify integration and reduce the time it takes to keep your site updated, this plugin ensures you stay on track with the fast-paced world of social media.
-
-With a range of customization options and an easy-to-use interface, Social Feed Gallery is the perfect solution for displaying your Instagram feed on your WordPress site.
 
 == Formerly Instagram Feed Gallery ==
 
@@ -100,14 +100,26 @@ There may be other plugins (like fancybox, elementor) that also use image links 
 
 == Changelog ==
 
-= 4.1.8 =
+= 4.2.2 =
+* New Instagram admin menu capability
+
+= 4.2.1 =
+* Update readme.txt
+
+= 4.2.0 =
+* Instagram modal token 
+
+= 4.1.9 =
+* Update portfolio link
+
+= 4.1.6 =
 * WordPress compatibility
 
 = 4.1.7 =
 * Instagram Feed modal align text 
 * Instagram Feed modal font size 
 
-= 4.1.8 =
+= 4.1.6 =
 * Instagram Access Token max length removed 
 * Instagram Feeds undefined
 * Instagram Feeds fetch timeout increased

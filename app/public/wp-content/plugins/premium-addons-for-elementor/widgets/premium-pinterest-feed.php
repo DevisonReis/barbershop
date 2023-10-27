@@ -1710,7 +1710,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$papro_activated = apply_filters( 'papro_activated', false );
 
 		if ( $papro_activated ) {
-			do_action( 'pa_pinterest_hover_effects', $this );
+			do_action( 'pa_image_hover_effects', $this );
 		}
 
 		$this->add_group_control(
@@ -2509,6 +2509,8 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$papro_activated = apply_filters( 'papro_activated', false );
 
 		if ( ! $papro_activated || version_compare( PREMIUM_PRO_ADDONS_VERSION, '2.9.2', '<' ) ) {
+
+			$settings['image_hover_effect'] = '';
 
 			if ( 'layout-1' !== $settings['pin_layout'] || 'boards/' === $settings['endpoint'] || 'yes' === $settings['profile_header'] ) {
 

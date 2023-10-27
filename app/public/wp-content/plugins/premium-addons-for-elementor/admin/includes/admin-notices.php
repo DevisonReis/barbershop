@@ -61,10 +61,10 @@ class Admin_Notices {
 
 		self::$notices = array(
 			'pa-review',
-			'tiktok_tooltip_notice',
+			'shape_divider',
 		);
 
-		delete_option( 'pinterest_notice' );
+		delete_option( 'advanced_carousel' );
 
 	}
 
@@ -106,7 +106,7 @@ class Admin_Notices {
 			return;
 		}
 
-		$this->get_tiktok_tooltip_notice();
+		$this->get_shape_divider_notice();
 
 	}
 
@@ -255,24 +255,22 @@ class Admin_Notices {
 
 	/**
 	 *
-	 * Shows admin notice for TikTok Feed and Tooltips.
+	 * Shows admin notice for Shape Divider.
 	 *
 	 * @since 4.8.8
 	 * @access public
 	 *
 	 * @return void
 	 */
-	public function get_tiktok_tooltip_notice() {
+	public function get_shape_divider_notice() {
 
-		$tiktok_notice = get_option( 'tiktok_tooltip_notice' );
+		$shape_divider = get_option( 'shape_divider' );
 
-		if ( '1' === $tiktok_notice ) {
+		if ( '1' === $shape_divider ) {
 			return;
 		}
 
-		$tiktok_url = Helper_Functions::get_campaign_link( 'https://premiumaddons.com/elementor-tiktok-feed-widget/', 'tiktok-tooltip-notification', 'wp-dash', 'tiktok-tooltip' );
-
-		$tooltips_url = Helper_Functions::get_campaign_link( 'https://premiumaddons.com/elementor-tooltip-global-addon/', 'tiktok-tooltip-notification', 'wp-dash', 'tiktok-tooltip' );
+		$shape_divider = Helper_Functions::get_campaign_link( 'https://premiumaddons.com/elementor-animated-shape-divider-addon/', 'shape-divider-notification', 'wp-dash', 'shape-divider' );
 
 		?>
 
@@ -282,10 +280,11 @@ class Admin_Notices {
 			</div>
 			<div class="pa-text-wrap">
 				<p>
-					<?php echo sprintf( __( '<a href="%1$s" target="_blank"><strong>TikTok Feed widget</strong></a> and <a href="%2$s" target="_blank"><strong>Global Tooltips addon</strong></a> are now available in Premium Addons for Elementor!', 'premium-addons-for-elementor' ), $tiktok_url, $tooltips_url ); ?>
+					<strong><?php echo __( 'Premium Animated Shape Divider addon', 'premium-addons-for-elemetor' ); ?></strong>
+					<?php echo sprintf( __( 'is now available in Premium Addons for Elementor. <a href="%s" target="_blank">Check it out now!</a>', 'premium-addons-for-elementor' ), $shape_divider ); ?>
 				</p>
 			</div>
-			<div class="pa-notice-close" data-notice="tiktok">
+			<div class="pa-notice-close" data-notice="divider">
 				<span class="dashicons dashicons-dismiss"></span>
 			</div>
 		</div>

@@ -7,7 +7,8 @@
         // $scope.find('.premium-nav-widget-container').removeClass('premium-addons-invisible');
 
         if (!elementorFrontend.isEditMode()) {
-            $scope.find('.premium-nav-widget-container').css({ visibility: 'visible', opacity: 1 });
+            // $scope.find('.premium-nav-widget-container').css({ visibility: 'visible', opacity: 1 });
+            $scope.find('.premium-nav-widget-container').css({ visibility: 'inherit', opacity: 'inherit' });
         }
 
         var settings = $scope.find('.premium-nav-widget-container').data('settings');

@@ -2087,6 +2087,10 @@
     content: "\e95b";
 }
 
+.pa-dash-premium-media-wheel:before {
+    content: "\e95d";
+}
+
 @-webkit-keyframes spin {
     0% {
         -webkit-transform: rotateZ(-180deg) rotateY(180deg);

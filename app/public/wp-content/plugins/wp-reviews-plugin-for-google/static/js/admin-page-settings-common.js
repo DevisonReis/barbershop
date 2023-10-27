@@ -293,6 +293,7 @@ jQuery(document).ready(function() {
 		if (init !== true) {
 			jQuery.post('', {
 				command: 'save-filter',
+				_wpnonce: jQuery('#ti-filter #show-star').data('nonce'),
 				filter: JSON.stringify({
 					'stars': stars,
 					'only-ratings': showOnlyRatings
@@ -676,6 +677,7 @@ jQuery(document).ready(function() {
 					url: window.location.href,
 					data: {
 						id: btn.attr('href'),
+						_wpnonce: btn.data('nonce'),
 						'save-reply': reply
 					}
 				});
@@ -753,6 +755,7 @@ jQuery(document).ready(function() {
 
 		if (data.start !== null) {
 			data.id = btn.attr('href');
+			data._wpnonce = btn.data('nonce');
 			data['save-highlight'] = 1;
 
 			btn.addClass('btn-loading').blur();
@@ -780,9 +783,39 @@ jQuery(document).ready(function() {
 			url: window.location.href,
 			data: {
 				id: btn.attr('href'),
+				_wpnonce: btn.data('nonce'),
 				'save-highlight': 1
 			}
 		}).always(() => location.reload(true));
+	});
+
+	// review download notification email
+	jQuery(document).on('change', '.ti-notification-email input[type="text"]', function(event) {
+		event.preventDefault();
+
+		let type = jQuery(this).data('type');
+		let nonce = jQuery(this).data('nonce');
+		let email = jQuery(this).val().trim().toLowerCase();
+		let container = jQuery(this).closest('.ti-notification-email');
+
+		// hide alerts
+		container.find('.ti-text-danger, .ti-text-success').addClass('d-none');
+
+		// check email
+		if (email !== "" && !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
+			container.find('.ti-text-danger').removeClass('d-none');
+			return setTimeout(() => container.find('.ti-text-danger').addClass('d-none'), 3000);
+		}
+
+		// save email
+		jQuery.post("", {
+			'save-notification-email': email,
+			'type': type,
+			'_wpnonce': nonce
+		}, () => {
+			container.find('.ti-text-success').removeClass('d-none');
+			return setTimeout(() => container.find('.ti-text-success').addClass('d-none'), 3000);
+		});
 	});
 });
 
@@ -967,7 +1000,7 @@ jQuery(document).on('click', '.ti-rate-us-box .ti-quick-rating .ti-star-check', 
 	// show modals
 	if (parseInt(star.data('value')) >= 4) {
 		// open new window
-		window.open(location.href + '&command=rate-us-feedback&star=' + star.data('value'), '_blank');
+		window.open(location.href + '&command=rate-us-feedback&_wpnonce='+ container.data('nonce') +'&star=' + star.data('value'), '_blank');
 
 		jQuery('.ti-rate-us-box').fadeOut();
 	}
@@ -1026,6 +1059,7 @@ jQuery(document).on('click', '.btn-rateus-support', function(event) {
 		dataType: 'application/json',
 		data: {
 			command: 'rate-us-feedback',
+			_wpnonce: btn.data('nonce'),
 			email: email,
 			text: text,
 			star: container.find('.ti-quick-rating .ti-star-check.active').data('value')

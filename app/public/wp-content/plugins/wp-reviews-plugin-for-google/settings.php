@@ -3,20 +3,6 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 if (!current_user_can('edit_pages')) {
 die('The account you\'re logged in to doesn\'t have permission to access this page.');
 }
-if (isset($_GET['rate_us'])) {
-$mode = sanitize_text_field($_GET['rate_us']);
-$dbValue = 'hide';
-if ($mode === 'later') {
-$dbValue = $time = time() + (30 * 86400);
-}
-update_option($trustindex_pm_google->get_option_name('rate-us'), $dbValue, false);
-if ($mode === 'open') {
-header('Location: https://wordpress.org/support/plugin/'. $trustindex_pm_google->get_plugin_slug() . '/reviews/?rate=5#new-post');
-exit;
-}
-echo '<script type="text/javascript">self.close();</script>';
-exit;
-}
 if (isset($_GET['wc_notification'])) {
 $mode = sanitize_text_field($_GET['wc_notification']);
 $dbValue = 'hide';
@@ -31,14 +17,61 @@ exit;
 echo '<script type="text/javascript">self.close();</script>';
 exit;
 }
+if (isset($_GET['notification'])) {
+$type = sanitize_text_field($_GET['notification']);
+switch (sanitize_text_field($_GET['action'])) {
+case 'later':
+$trustindex_pm_google->setNotificationParam($type, 'timestamp', time() + (14 * 86400));
+break;
+case 'close':
+if ($type !== 'rate-us') {
+$trustindex_pm_google->setNotificationParam($type, 'active', false);
+}
+break;
+case 'open':
+$trustindex_pm_google->setNotificationParam($type, 'active', false);
+if ($type === 'rate-us') {
+header('Location: https://wordpress.org/support/plugin/'. $trustindex_pm_google->get_plugin_slug() . '/reviews/?rate=5#new-post');
+exit;
+}
+$tab = 'setup_no_reg';
+if (in_array($type, [ 'review-download-available', 'review-download-finished' ])) {
+$tab = 'my_reviews';
+}
+header('Location: admin.php?page=' . sanitize_text_field($_GET['page']) .'&tab='. $tab);
+break;
+case 'hide':
+$trustindex_pm_google->setNotificationParam($type, 'hidden', true);
+header('Location: admin.php?page=' . sanitize_text_field($_GET['page']) .'&tab=advanced');
+break;
+case 'unhide':
+$trustindex_pm_google->setNotificationParam($type, 'hidden', false);
+header('Location: admin.php?page=' . sanitize_text_field($_GET['page']) .'&tab=advanced');
+break;
+}
+exit;
+}
 if (isset($_GET['test_proxy'])) {
+check_admin_referer('ti-test-proxy');
 delete_option($trustindex_pm_google->get_option_name('proxy-check'));
 header('Location: admin.php?page=' . sanitize_text_field($_GET['page']) .'&tab=' . sanitize_text_field($_GET['tab']));
 exit;
 }
-if (isset($_GET['review_download_notification'])) {
-update_option($trustindex_pm_google->get_option_name('review-download-notification'), 0, false);
-header('Location: admin.php?page=' . sanitize_text_field($_GET['page']) .'&tab=setup_no_reg');
+if (isset($_REQUEST['command']) && $_REQUEST['command'] === 'rate-us-feedback') {
+check_admin_referer('ti-rate-us');
+$text = isset($_POST['text']) ? trim(wp_kses_post(stripslashes($_POST['text']))) : "";
+$email = isset($_POST['email']) ? trim(sanitize_text_field($_POST['email'])) : "";
+$star = isset($_REQUEST['star']) ? intval($_REQUEST['star']) : 1;
+update_option($trustindex_pm_google->get_option_name('rate-us-feedback'), $star, false);
+if ($star > 3) {
+header('Location: https://wordpress.org/support/plugin/'. $trustindex_pm_google->get_plugin_slug() . '/reviews/?rate='. $star .'#new-post');
+}
+else {
+wp_mail('support@trustindex.io', 'Feedback from Google plugin', "We received a <strong>$star star</strong> feedback about the Google plugin from $email:<br /><br />$text", [
+'From: '. $email,
+'Content-Type: text/html; charset=UTF-8'
+]);
+}
 exit;
 }
 $tabs = [];
@@ -60,8 +93,8 @@ if (!$trustindex_pm_google->is_trustindex_connected()) {
 $tabs[ TrustindexPlugin_google::___('Get more Features') ] = 'setup_trustindex';
 $tabs[ TrustindexPlugin_google::___('Log In') ] = 'setup_trustindex_join';
 }
+$tabs[ TrustindexPlugin_google::___('Advanced') ] = 'advanced';
 $tabs[ TrustindexPlugin_google::___('Feature request') ] = 'feature_request';
-$tabs[ TrustindexPlugin_google::___('Troubleshooting') ] = 'troubleshooting';
 $selectedTab = isset($_GET['tab']) ? sanitize_text_field($_GET['tab']) : null;
 $subTabs = null;
 $newBadgeTabs = [];
@@ -235,7 +268,7 @@ loadedCount++;
 <strong><?php echo $proxyCheck; ?></strong><br /><br />
 <?php echo TrustindexPlugin_google::___('Therefore, our plugin might not work properly. Please, contact your hosting support, they can resolve this easily.'); ?>
 </p>
-<a href="?page=<?php echo esc_attr($_GET['page']); ?>&tab=<?php echo esc_attr($_GET['tab']); ?>&test_proxy" class="btn-text btn-refresh"><?php echo TrustindexPlugin_google::___('Test again') ;?></a>
+<a href="<?php echo wp_nonce_url('?page='. esc_attr($_GET['page']) .'&tab='. esc_attr($_GET['tab']) .'&test_proxy', 'ti-test-proxy'); ?>" class="btn-text btn-refresh"><?php echo TrustindexPlugin_google::___('Test again') ;?></a>
 </div>
 <?php endif; ?>
 <div class="nav-tab-wrapper">
@@ -253,7 +286,7 @@ $subTabs = $tab;
 ?>
 <a
 id="link-tab-<?php echo esc_attr($action); ?>"
-class="nav-tab<?php if($isActive): ?> nav-tab-active<?php endif; ?><?php if($tab == 'troubleshooting' || $tab == 'feature_request'): ?> nav-tab-right<?php endif; ?>"
+class="nav-tab<?php if($isActive): ?> nav-tab-active<?php endif; ?><?php if($tab == 'advanced' || $tab == 'feature_request'): ?> nav-tab-right<?php endif; ?>"
 href="<?php echo admin_url('admin.php?page='.$trustindex_pm_google->get_plugin_slug().'/settings.php&tab='. esc_attr($action)); ?>"
 >
 <?php echo esc_html($tabName); ?>

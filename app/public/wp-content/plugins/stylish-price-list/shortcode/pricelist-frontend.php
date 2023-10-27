@@ -105,6 +105,9 @@ if ( ! empty( $id ) ) {
 		'category_select_scrolling' => $category_select_scrolling
 	);
 }
+if ( empty( $id ) ) {
+	return 'Price List does not exist';
+}
 if ( $show_dropdown ) {
 	wp_enqueue_style( 'spl-tomselect', SPL_URL . '/assets/css/tom-select.bootstrap4.min.css', array(), df_spl_get_file_version( SPL_DIR . '/assets/css/tom-select.bootstrap4.min.css' ) );
 	wp_enqueue_script( 'spl-tomselect', SPL_URL . '/assets/js/tom-select.base.min.js', array(), df_spl_get_file_version( SPL_DIR . '/assets/js/tom-select.base.min.js' ), true );
@@ -3455,16 +3458,23 @@ if ( $style == 'style_8' ) :
 		?>
 		#spl_<?php echo esc_attr($id); ?>.price_wrapper .name-price-desc .desc.a-tag,
 	#spl_<?php echo esc_attr($id); ?>.price_wrapper .spl-style-5 .spl-five-bottom .desc,
-	#spl_<?php echo esc_attr($id); ?>.price_wrapper .spl-style-7 .desc,
-	#spl_<?php echo esc_attr($id); ?>.price_wrapper .cat_descreption .col-sm-12,
-	#spl_<?php echo esc_attr($id); ?>.price_wrapper .style3_cat_desc,
-	#spl_<?php echo esc_attr($id); ?>.price_wrapper .style4_cat_desc,
 	#spl_<?php echo esc_attr($id); ?>.price_wrapper .style-8-title-container small,
 	#spl_<?php echo esc_attr($id); ?> .ts-control .item,
 	#spl_<?php echo esc_attr($id); ?> .ts-dropdown-content .option {
 		font-family: <?php echo splPrintFontName( $service_description_font ); ?>;
 		font-size: <?php echo esc_attr($service_description_font_size); ?>;
 		color: <?php echo esc_attr($service_description_color); ?>;
+		font-weight: 400;
+	}
+
+
+	#spl_<?php echo esc_attr($id); ?>.price_wrapper .cat_descreption .col-sm-12,
+	#spl_<?php echo esc_attr($id); ?>.price_wrapper .spl-style-7 .desc,
+	#spl_<?php echo esc_attr($id); ?>.price_wrapper .style3_cat_desc,
+	#spl_<?php echo esc_attr($id); ?>.price_wrapper .style4_cat_desc {
+		font-family: <?php echo splPrintFontName( $tab_description_font ); ?>;
+		font-size: <?php echo esc_attr($tab_description_font_size); ?>;
+		color: <?php echo esc_attr($tab_description_color); ?>;
 		font-weight: 400;
 	}
 

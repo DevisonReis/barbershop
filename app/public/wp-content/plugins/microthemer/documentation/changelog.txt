@@ -1,5 +1,27 @@
 CHANGELOG
 
+= 7.2.4.5 (October 9th, 2023) =
+
+# Bugs Fixed
+* Fixed JS error - "TypeError: e.replace is not a function at Object.custom_to_non_escaped".
+* Fixed JS error - "Uncaught TypeError: Cannot read properties of null (reading 'empty')".
+* Fixed JS error - "TypeError: Cannot read properties of undefined (reading 'add')".
+* Fixed JS error - "Uncaught TypeError: Cannot read properties of undefined (reading 'split')".
+* Fixed JS error - "TypeError: Cannot convert undefined or null to object".
+* Fixed JS error - "TypeError: Cannot read properties of undefined (reading 'interactions')".
+* Fixed JS error - "TypeError: Cannot read properties of undefined (reading 'is')".
+
+= 7.2.4.4 (September 6th, 2023) =
+
+# Bugs Fixed
+* Z-index conflict with CartPops plugin meant Microthemer's element selection overlays did not display above a shopping cart popup.
+
+= 7.2.4.3 (September 5th, 2023) =
+
+# Enhancement
+* New option added to the preferences: "Auto-focus the code editor cursor after selecting an element". This saves time clicking on the code editor after selecting an element, but can also lead to accidental typing in the editor. Furthermore, there may be some bugs as a result of automatically shifting focus - please report any that you find.
+* Added a "Wireframe mode" option to the Settings > view menu. This gives all elements a semi-transparent gray background and a dashed border. This helps understand the underlying HTML structure of the page, and is useful for identifying elements that cause unwanted overflow on the page, possibly leading to scrollbars appearing in strange places. Microthemer also highlights ::before and ::after pseudo elements - a bit more faded out, so they're distinguishable from regular elements.
+
 = 7.2.4.2 (September 1st, 2023) =
 
 # Bugs fixed

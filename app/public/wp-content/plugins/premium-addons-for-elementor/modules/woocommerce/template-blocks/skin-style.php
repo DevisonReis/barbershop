@@ -558,7 +558,6 @@ abstract class Skin_Style {
 
 					$query_args['paged'] = $paged;
 				}
-
 			} else {
 
 				if ( $settings['total_carousel_products'] > 0 ) {
@@ -612,6 +611,10 @@ abstract class Skin_Style {
 						'terms'    => $settings['tags'],
 						'operator' => $tag_rule,
 					);
+				}
+
+				if ( ! empty( $settings['products'] ) ) {
+					$query_args[ $settings['product_filter_rule'] ] = $settings['products'];
 				}
 
 				if ( 0 < $settings['offset'] ) {
@@ -722,11 +725,11 @@ abstract class Skin_Style {
 
 		if ( 'grid' === $settings['layout_type'] || 'masonry' === $settings['layout_type'] ) {
 
-            $woocommerce_loop['columns'] = intval( 100 / substr( $settings['columns'], 0, strpos( $settings['columns'], '%' ) ) );
+			$woocommerce_loop['columns'] = intval( 100 / substr( $settings['columns'], 0, strpos( $settings['columns'], '%' ) ) );
 
-            if ( '16.667%' === $settings['columns'] ) {
-                $woocommerce_loop['columns'] = 6;
-            }
+			if ( '16.667%' === $settings['columns'] ) {
+				$woocommerce_loop['columns'] = 6;
+			}
 
 			// if ( 'main' !== $settings['query_type'] ) {
 			if ( 0 < $settings['products_numbers'] && '' !== $settings['pagination'] ) {
@@ -753,7 +756,7 @@ abstract class Skin_Style {
 
 			if ( 'yes' === $divider && 'grid' === $settings['layout_type'] ) {
 				$this->add_render_attribute( 'wrapper', 'class', 'premium-woo-grid-' . $woocommerce_loop['columns'] );
-			} else if ('masonry' === $settings['layout_type']) {
+			} elseif ( 'masonry' === $settings['layout_type'] ) {
 				$this->add_render_attribute( 'wrapper', 'class', 'premium-woo-masonry-' . $woocommerce_loop['columns'] );
 			}
 
@@ -1051,7 +1054,7 @@ abstract class Skin_Style {
 
 		if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
 
-			if ( 'masonry' === self::$settings['layout_type']) {
+			if ( 'masonry' === self::$settings['layout_type'] ) {
 				$this->render_editor_script();
 			}
 		}
@@ -1079,11 +1082,11 @@ abstract class Skin_Style {
 	}
 
 		/**
-	 * Render Editor Masonry Script.
-	 *
-	 * @since 3.12.3
-	 * @access protected
-	 */
+		 * Render Editor Masonry Script.
+		 *
+		 * @since 3.12.3
+		 * @access protected
+		 */
 	protected function render_editor_script() {
 
 		?>

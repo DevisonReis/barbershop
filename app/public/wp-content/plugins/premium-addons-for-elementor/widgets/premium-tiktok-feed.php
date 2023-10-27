@@ -2553,6 +2553,8 @@ class Premium_Tiktok_Feed extends Widget_Base {
 			$refreshed_token = refresh_tiktok_token( $shortened_token );
 
 			$settings['access_token'] = $refreshed_token;
+		} else {
+			$settings['access_token'] = $is_valid;
 		}
 
 		$show_feed    = 'yes' === $settings['show_feed'];

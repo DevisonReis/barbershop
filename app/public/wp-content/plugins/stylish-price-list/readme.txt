@@ -1,13 +1,14 @@
-=== Stylish Price List - QR Code Restaurant Menu and Price Table Builder ===
+=== Stylish Price List - Price Table Builder & QR Code Restaurant Menu ===
+Plugin Name: Stylish Price List - Price Table Builder & QR Code Restaurant Menu
 Contributors: Designful
-Tags: Price List, Spas, Salons, Small Businesses, Price Table, Pricing Table, Stylish Price List, Fancy Price List, Salon Price List, Responsive Price List, Website Pricing, Price Builder, Pricing Table, Price list Builder, Pricing table builder, Website pricing
+Tags: qr code menu, pricing table, restaurant menu, table builder, price list builder
 Plugin URL: https://stylishpricelist.com
-Version: 7.0.12
+Version: 7.0.16
 Donate link: https://stylishpricelist.com
 Requires at least: 4.0
 Tested up to: 6.3
 Requires PHP: 5.6
-Stable tag: 7.0.12
+Stable tag: 7.0.16
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 

@@ -49,11 +49,11 @@
 
                         jQuery.ajax({
                             type: "GET",
-                            url: socialSettings.ajaxurl,
+                            url: PremiumSettings.ajaxurl,
                             dataType: "JSON",
                             data: {
                                 action: "get_pinterest_boards",
-                                security: socialSettings.nonce,
+                                nonce: PremiumSettings.nonce,
                                 token: pinterestToken
                             },
                             success: function (res) {
@@ -445,5 +445,56 @@
     elementor.on('navigator:init', onNavigatorInit);
 
 
+    var e = elementor.modules.controls.BaseData,
+        imageChoose = e.extend({
+            ui: function () {
+                var t = e.prototype.ui.apply(this, arguments);
+                return t.inputs = '[type="radio"]', t
+            },
+            events: function () {
+                return _.extend(e.prototype.events.apply(this, arguments), {
+                    "mousedown label": "onMouseDownLabel",
+                    "click @ui.inputs": "onClickInput",
+                    "change @ui.inputs": "onBaseInputChange"
+                })
+            },
+
+            onMouseDownLabel: function (e) {
+                var t = this.$(e.currentTarget),
+                    o = this.$("#" + t.attr("for"));
+
+                $('.elementor-control-form_insert .elementor-button').css('background-color', '#252c59');
+                o.data("checked", o.prop("checked")), this.ui.inputs.removeClass("checked"), o.data("checked", o.addClass("checked"))
+            },
+
+            onClickInput: function (e) {
+                if (this.model.get("toggle")) {
+                    var t = this.$(e.currentTarget);
+                    t.data("checked") && t.prop("checked", !1).trigger("change")
+                }
+            },
+
+            onRender: function () {
+                e.prototype.onRender.apply(this, arguments);
+                var t = this.getControlValue();
+                t && (this.ui.inputs.filter('[value="' + t + '"]').prop("checked", !0), this.ui.inputs.filter('[value="' + t + '"]').addClass("checked"))
+            },
+            onReady: function() {
+                if ( 'premium_gdivider_defaults' === this.model.attributes.name) {
+                    const choicesContainer = $(this.el).find('.elementor-image-choices')[0];
+                    new PerfectScrollbar (  choicesContainer, {
+                        suppressScrollX: true,
+                    });
+
+                }
+            }
+
+        }, {
+            onPasteStyle: function (e, t) {
+                return "" === t || undefined !== e.options[t]
+            }
+        });
+
+    elementor.addControlView("premium-image-choose", imageChoose)
 
 })(jQuery);

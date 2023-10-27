@@ -130,6 +130,13 @@
 
             });
 
+            if ($products.find('li.product').length < carousel.slidesToShow) {
+                $elem.removeClass("premium-carousel-hidden");
+                $products.find('li.product').css('width', (100 / carousel.slidesToShow) + '%');
+                return;
+            }
+
+
             $products.slick(carousel);
 
 

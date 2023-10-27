@@ -65,7 +65,7 @@ class Account extends Models_Base {
 		$business_refresh_access_token = new Api_Fetch_Business_Refresh_Access_Token();
 		$personal_refresh_access_token = new Api_Fetch_Personal_Refresh_Access_Token();
 
-		if ( substr( $access_token, 0, 4 ) === 'IGQV' ) {
+		if ( substr( $access_token, 0, 2 ) === 'IG' ) {
 			return $personal_refresh_access_token->get_data( $access_token, $access_token_renew_attempts );
 		}
 
@@ -165,7 +165,7 @@ class Account extends Models_Base {
 	 * @return string
 	 */
 	protected function get_token_type( $account ) {
-		if ( substr( $account['access_token'], 0, 4 ) === 'IGQV' ) {
+		if ( substr( $account['access_token'], 0, 2 ) === 'IG' ) {
 			return 'PERSONAL';
 		}
 		return 'BUSINESS';

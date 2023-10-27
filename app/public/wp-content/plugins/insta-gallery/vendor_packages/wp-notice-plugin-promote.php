@@ -22,7 +22,7 @@ if ( class_exists( 'QuadLayers\\WP_Notice_Plugin_Promote\\Load' ) ) {
 	define( 'QLIGG_PROMOTE_CROSS_INSTALL_1_SLUG', 'wp-tiktok-feed' );
 	define( 'QLIGG_PROMOTE_CROSS_INSTALL_1_NAME', 'TikTok Feed' );
 	define( 'QLIGG_PROMOTE_CROSS_INSTALL_1_DESCRIPTION', esc_html__( 'TikTok Feed is the most user-friendly TikTok plugin for WordPress. It was built to simplify the integration, to reduce time to have sites updated and to be on track with social media that shows best growing indicators.', 'insta-gallery' ) );
-	define( 'QLIGG_PROMOTE_CROSS_INSTALL_1_URL', 'https://quadlayers.com/portfolio/tiktok-feed/?utm_source=qligg_admin' );
+	define( 'QLIGG_PROMOTE_CROSS_INSTALL_1_URL', 'https://quadlayers.com/products/tiktok-feed/?utm_source=qligg_admin' );
 	/**
 	 * Notice cross sell 2
 	 */

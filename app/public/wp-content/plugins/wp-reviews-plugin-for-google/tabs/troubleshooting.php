@@ -28,7 +28,7 @@ exit;
 }
 $yesIcon = '<span class="dashicons dashicons-yes-alt"></span>';
 $noIcon = '<span class="dashicons dashicons-dismiss"></span>';
-$pluginUpdated = ($trustindex_pm_google->get_plugin_current_version() <= "10.6");
+$pluginUpdated = ($trustindex_pm_google->get_plugin_current_version() <= "10.8");
 $cssInline = get_option($trustindex_pm_google->get_option_name('load-css-inline'), 0);
 $css = get_option($trustindex_pm_google->get_option_name('css-content'));
 ?>

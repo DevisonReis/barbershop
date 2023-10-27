@@ -18,9 +18,9 @@ class Stylish_Price_List_Tabs {
 	public function admin_menu() {
 		$icon_url = SPL_URL . 'assets/images/spl_icon.png';
 		/** Top Menu **/
-		add_menu_page( __( 'Stylish Price List', 'spl' ), __( 'Stylish Price List', 'spl' ), 'manage_options', 'spl-tabs', array( $this, 'plugin_page' ), $icon_url, 99 );
-		add_submenu_page( 'spl-tabs', __( 'All Lists', 'spl' ), __( 'All Lists', 'spl' ), 'manage_options', 'spl-tabs', array( $this, 'plugin_page' ) );
-		add_submenu_page( 'spl-tabs', __( 'Add New List', 'spl' ), __( 'Add New List', 'spl' ), 'manage_options', 'spl-tabs-new', array( $this, 'plugin_page_new' ) );
+		add_menu_page( __( 'Stylish Price List', 'spl' ), __( 'Stylish Price List', 'spl' ), 'edit_posts', 'spl-tabs', array( $this, 'plugin_page' ), $icon_url, 99 );
+		add_submenu_page( 'spl-tabs', __( 'All Lists', 'spl' ), __( 'All Lists', 'spl' ), 'edit_posts', 'spl-tabs', array( $this, 'plugin_page' ) );
+		add_submenu_page( 'spl-tabs', __( 'Add New List', 'spl' ), __( 'Add New List', 'spl' ), 'edit_posts', 'spl-tabs-new', array( $this, 'plugin_page_new' ) );
 		add_submenu_page( 'spl-tabs', __( 'SPL Diagnostic', 'spl' ), __( 'SPL Diagnostic', 'spl' ), 'manage_options', 'spl-tabs-diagnostic', array( $this, 'plugin_page_diagnostic' ) );
 	}
 	public function plugin_page_new() {
@@ -89,15 +89,40 @@ class Stylish_Price_List_Tabs {
 	public function feedback_manage() {
 		check_ajax_referer('spl-feedback-modal');
 		$args = isset( $_POST['btn-type'] ) ? sanitize_text_field( $_POST['btn-type'] ) : false;
-		$data = null;
-		if ( $args ) {
-			$data = $this->feedback_invokation( $args );
-		}
-		wp_send_json(
-			array(
-				'ok' => $data,
-			)
-		);
+
+        if ( $args ) {
+            $data = $this->feedback_invokation( $args );
+            wp_send_json(array('ok' => $data));
+        }
+        $data = json_decode( file_get_contents( 'php://input' ), true );
+		$user = wp_get_current_user();
+        $data = wp_parse_args( $data, [
+            'rating'         => 0,
+            'text'           => '',
+            'optedForEmail'  => false,
+            'appVersion'     => STYLISH_PRICE_LIST_VERSION,
+            'siteUrl'        => get_site_url(),
+            'isPremium'      => empty( get_option( 'spllk_opt' ) ) ? 'No' : 'Yes',
+			'user'           => $user->get('display_name'),
+        ] );
+        $survey_store_url = 'https://hook.us1.make.com/6r0nqwcid3i4tpnej5aefrbnfknx7gwk';
+        $headers          = [
+            'user-agent'        => 'SPL/' . STYLISH_PRICE_LIST_VERSION . ';',
+            'Accept'            => 'application/json',
+            'Content-Type'      => 'application/json'
+        ];
+        $resp = wp_remote_post( $survey_store_url, [
+            'method'      => 'POST',
+            'timeout'     => 5,
+            'redirection' => 5,
+            'httpversion' => '1.0',
+            'blocking'    => false,
+            'headers'     => $headers,
+            'body'        => wp_json_encode( $data ),
+            'cookies'     => [],
+        ] );
+        scc_feedback_invocation( 'comment_and_rating' );
+        wp_send_json( [ 'ok' => $data ] );
 	}
 	/**
 	* Sets feedback modal invokation to compare against 'spl_save_count' option

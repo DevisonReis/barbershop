@@ -148,6 +148,81 @@ div#sortable {
 	width: 100%
 }
 
+.df-spl-d-none {
+	display: none;
+}
+#user-scc-sv .df-spl-euiModal {
+    width: 700px;
+}
+
+#user-scc-sv .pagination {
+	display: inline;
+}
+
+#user-scc-sv .pagination > li > span {
+	color: #70bbb1;
+}
+
+#user-scc-sv .text-info {
+    color: #70bbb1;
+}
+
+#comments-submit-btn:hover {
+    color: #fff;
+    background-color: #c9a777;
+    border-color: #c9a777;
+}
+
+#comments-submit-btn {
+	color: #fff;
+    background-color: #c9a777;
+    border-color: #c9a777;
+}
+
+#user-scc-sv .align-items-center p {
+    font-size: 16px;
+    margin: 0;
+}
+
+#user-scc-sv .pagination>li {
+	cursor: pointer;
+}
+
+#user-scc-sv .df-spl-euiModalHeader__title {
+	font-weight: 400;
+}
+
+#user-scc-sv label {
+	font-weight: 600;
+}
+
+.scc-form-checkbox {
+	margin-bottom: 16px;
+}
+
+#survey-email-input-wrapper {
+	margin-top: 16px;
+}
+
+.text-info {
+    color: #0dcaf0;
+}
+
+.d-block {
+	display: block!important;
+}
+
+.align-items-center {
+    align-items: center!important;
+}
+
+.justify-content-between {
+    justify-content: space-between!important;
+}
+.d-flex {
+    display: flex!important;
+}
+
 .scc-modal-content-videos {
 	max-width: 1200px
 }

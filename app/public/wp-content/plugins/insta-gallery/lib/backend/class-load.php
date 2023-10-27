@@ -26,6 +26,7 @@ class Load {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'init', array( __CLASS__, 'init_add_account' ) );
 		add_action( 'admin_menu', array( $this, 'add_menu' ) );
+		add_action( 'admin_init', array( $this, 'add_capability' ) );
 		add_action( 'admin_head', array( __CLASS__, 'add_premium_js' ) );
 		add_action( 'admin_footer', array( __CLASS__, 'add_premium_css' ) );
 	}
@@ -40,7 +41,7 @@ class Load {
 		add_menu_page(
 			QLIGG_PLUGIN_NAME,
 			QLIGG_PLUGIN_NAME,
-			'edit_posts',
+			'qligg_manage_feeds',
 			$menu_slug,
 			'__return_null',
 			'dashicons-camera'
@@ -49,7 +50,7 @@ class Load {
 			$menu_slug,
 			esc_html__( 'Welcome', 'insta-gallery' ),
 			esc_html__( 'Welcome', 'insta-gallery' ),
-			'edit_posts',
+			'qligg_manage_feeds',
 			$menu_slug,
 			'__return_null'
 		);
@@ -57,7 +58,7 @@ class Load {
 			$menu_slug,
 			esc_html__( 'Accounts', 'insta-gallery' ),
 			esc_html__( 'Accounts', 'insta-gallery' ),
-			'manage_options',
+			'qligg_manage_feeds',
 			"{$menu_slug}&tab=accounts",
 			'__return_null'
 		);
@@ -65,7 +66,7 @@ class Load {
 			$menu_slug,
 			esc_html__( 'Feeds', 'insta-gallery' ),
 			esc_html__( 'Feeds', 'insta-gallery' ),
-			'manage_options',
+			'qligg_manage_feeds',
 			"{$menu_slug}&tab=feeds",
 			'__return_null'
 		);
@@ -73,7 +74,7 @@ class Load {
 			$menu_slug,
 			esc_html__( 'Settings', 'insta-gallery' ),
 			esc_html__( 'Settings', 'insta-gallery' ),
-			'manage_options',
+			'qligg_manage_feeds',
 			"{$menu_slug}&tab=settings",
 			'__return_null'
 		);
@@ -84,10 +85,15 @@ class Load {
 				'%s <i class="dashicons dashicons-awards"></i>',
 				esc_html__( 'Premium', 'insta-gallery' )
 			),
-			'edit_posts',
+			'qligg_manage_feeds',
 			"{$menu_slug}&tab=premium",
 			'__return_null'
 		);
+	}
+
+	public function add_capability() {
+		$role = get_role( 'administrator' );
+		$role->add_cap( 'qligg_manage_feeds', true );
 	}
 
 	public function register_scripts() {

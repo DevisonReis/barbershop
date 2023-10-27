@@ -3,10 +3,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 	/*
-		Plugin Name: Stylish Price List - QR Code Restaurant Menu and Price Table Builder
+		Plugin Name: Stylish Price List
 		Plugin URI:  https://stylishpricelist.com/
 		Description: Build a stylish price list for your business
-		Version:     7.0.12
+		Version:     7.0.16
 		Author:      Designful
 		Author URI:  https://stylishpricelist.com/
 		License:     GPL2
@@ -14,22 +14,34 @@ if ( ! defined( 'ABSPATH' ) ) {
 		Domain Path: /languages
 		Text Domain: spl
 	*/
-		define( 'STYLISH_PRICE_LIST_VERSION', '7.0.12' );
+		define( 'STYLISH_PRICE_LIST_VERSION', '7.0.16' );
 		define( 'STYLISH_PRICE_LIST_BETA', false );
 		define( 'SPL_URL', plugin_dir_url( __FILE__ ) );
-		define( 'SPL_DIR', dirname( __FILE__ ) );
+		define( 'SPL_ASSETS_URL', SPL_URL . 'assets/' );
+		define( 'SPL_DIR', plugin_dir_path( __FILE__ ) );
+		define( 'SPL_INCLUDES_DIR', SPL_DIR . '/includes' );
+		define( 'SPL_ASSETS_DIR', SPL_DIR . '/assets/' );
 		define( 'SPL_DEFAULT_THUMBNAIL', SPL_URL . 'assets/images/def-thumb.png' );
 		define( 'SPL_DEFAULT_CAT_THUMBNAIL', SPL_URL . 'assets/images/cat-def-thumb.jpg' );
-		require plugin_dir_path( __FILE__ ) . '/cron/statistics.php';
+		require SPL_DIR . '/cron/statistics.php';
+		require SPL_INCLUDES_DIR . '/gutenberg-block/class-spl-gutenberg-block.php';
 function df_spl_load_plugin_textdomain() {
 	load_plugin_textdomain( 'spl', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 		add_action( 'plugins_loaded', 'df_spl_load_plugin_textdomain' );
+		add_action( 'plugins_loaded', 'df_spl_load_gutenberg_block' );
 function df_spl_remove_slash_quotes( $string ) {
 	$string = stripslashes( $string );
 	$string = wp_unslash( $string );
 	$string = html_entity_decode( $string );
 	return $string;
+}
+
+function df_spl_load_gutenberg_block() {
+	$block = new DF_SCC\StylishPriceList\Includes\Gutenberg_Block();
+	if ( $block->allow_load() ) {
+		$block->load();
+	}
 }
 	//Check SiteOrigin Plugin active or not
 function df_spl_my_custom_admin_notice() {

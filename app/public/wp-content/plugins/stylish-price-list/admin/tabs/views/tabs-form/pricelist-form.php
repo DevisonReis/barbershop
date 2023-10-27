@@ -31,7 +31,7 @@ if ( isset( $_GET['id'] ) ) {
 <?php
 $list_count               = df_spl_get_tabs_count();
 $opt                      = df_spl_get_options();
-$google_fonts_preview_out = $opt['google_fonts_preview_out'];
+// $google_fonts_preview_out = $opt['google_fonts_preview_out'];
 $opt = apply_filters( 'post-spricelist-form', $opt );
 $opt['html_out']          = 'select_html';
 $html_out                 = $opt['html_out'];
@@ -750,7 +750,7 @@ $google_fonts = $spl_googlefonts_var->$get_fonts_options();
 								  <option class="form-control default_tab" value="style_9b" <?php echo isset( $style ) && $style == 'style_9b' ? 'selected' : ''; ?>>Style #9b</option> -->
 								  <option class="form-control default_tab" value="style_10" <?php echo isset( $style ) && $style == 'style_10' ? 'selected' : ''; ?>>Style #10</option>
 							  </select>
-							  <div class="select-right-icon"><span class="df-scc-eui-FormControlLayoutCustomIcon"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="df-scc-eui-Icon df-scc-eui-Icon--medium df-scc-eui-FormControlLayoutCustomIcon__icon" focusable="false" role="img" aria-hidden="true">
+							  <div class="select-right-icon"><span class="df-spl-eui-FormControlLayoutCustomIcon"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="df-spl-eui-Icon df-spl-eui-Icon--medium df-spl-eui-FormControlLayoutCustomIcon__icon" focusable="false" role="img" aria-hidden="true">
 								<path fill-rule="non-zero" d="M13.069 5.157L8.384 9.768a.546.546 0 01-.768 0L2.93 5.158a.552.552 0 00-.771 0 .53.53 0 000 .759l4.684 4.61c.641.631 1.672.63 2.312 0l4.684-4.61a.53.53 0 000-.76.552.552 0 00-.771 0z">
 								</path>
 							</svg></span></div>
@@ -2163,7 +2163,7 @@ if ( array_key_exists( 'lang', $_REQUEST ) ) {
 }
 ?>
 <input type="hidden" class="change_lang" value="<?php echo esc_attr($change_lang_value); ?>">
-<div class="modal df-spl-modal" id="userSurvey">
+<!-- <div class="modal df-spl-modal" id="userSurvey">
 	<div class="df-spl-euiOverlayMask df-spl-euiOverlayMask--aboveHeader">
 		<div class="df-spl-euiModal df-spl-euiModal--maxWidth-default df-spl-euiModal--confirmation">
 			<div class="df-spl-euiModal__flex">
@@ -2193,6 +2193,79 @@ if ( array_key_exists( 'lang', $_REQUEST ) ) {
 							<span class="df-spl-euiButton__text">I’m Still Getting Used To It</span>
 						</span>
 					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> -->
+<!-- user survey modal, initiates if the editing page has been used more than 9 times -->
+<div class="modal df-spl-modal fade in" id="user-scc-sv" style="padding-right: 0px; display: none;" role="dialog">
+	<div class="df-spl-euiOverlayMask df-spl-euiOverlayMask--aboveHeader">
+		<div class="df-spl-euiModal df-spl-euiModal--maxWidth-default df-spl-euiModal--confirmation">
+			<button onclick="sccSkipFeedbackModal()" class="df-spl-euiButtonIcon df-spl-euiButtonIcon--text df-spl-euiModal__closeIcon" type="button" data-dismiss="modal" aria-label="Closes this modal window">
+				<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="df-spl-euiIcon df-spl-euiIcon--medium df-spl-euiButtonIcon__icon" focusable="false" role="img" aria-hidden="true">
+					<path d="M7.293 8L3.146 3.854a.5.5 0 11.708-.708L8 7.293l4.146-4.147a.5.5 0 01.708.708L8.707 8l4.147 4.146a.5.5 0 01-.708.708L8 8.707l-4.146 4.147a.5.5 0 01-.708-.708L7.293 8z"></path>
+				</svg>
+			</button>
+			<div class="df-spl-euiModal__flex">
+				<div class="step1-wrapper">
+					<div class="df-spl-euiModalHeader d-block pb-0">
+						<div class="df-spl-euiModalHeader__title pt-2">Rate your experience with our product...</div>
+					</div>
+					<div class="df-spl-euiModalBody">
+						<div class="df-spl-euiModalBody__overflow d-flex align-items-center">
+								<ul class="pagination pagination-lg me-3 mb-0 ratings-picker">
+									<li class="page-item me-2">
+										<span class="page-link text-dark" role="button">1</span>
+									</li>
+									<li class="page-item me-2"><span class="page-link text-dark" role="button">2</span></li>
+									<li class="page-item me-2"><span class="page-link text-dark" role="button">3</span></li>
+									<li class="page-item me-2"><span class="page-link text-dark" role="button">4</span></li>
+									<li class="page-item"><span class="page-link text-dark" role="button">5</span></li>
+								</ul>
+								<p><i class="fa fa-star text-info"></i>&nbsp;<span>Stars</span></p>
+						</div>
+					</div>
+					<div class="df-spl-euiModalFooter"></div>
+				</div>
+				<div class="step2-wrapper df-spl-d-none" data-nonce="<?php echo wp_create_nonce( 'spl-feedback-modal' ) ?>">
+					<div class="df-spl-euiModalHeader d-block pb-0">
+						<div class="pt-2 d-flex align-items-center justify-content-between">
+							<div class="df-spl-euiModalHeader__title">Anything that can be improved?</div>
+							<p><i class="fa fa-star text-info"></i>&nbsp;<span class="rating-chosen">5</span></p>
+						</div>
+					</div>
+					<div class="df-spl-euiModalBody">
+						<div class="df-spl-euiModalBody__overflow d-block align-items-center">
+							<div class="">
+								<textarea id="comments-text-input" class="form-control" placeholder="Your feedback (optional)" rows="4"></textarea>
+							</div>
+							<div class="form-group" id="survey-email-input-wrapper">
+								<label for="feedback-email-input">Your email address (optional)</label>
+								<input id="feedback-email-input" class="form-control" value="<?php echo esc_attr( get_option( 'admin_email' ) ); ?>" >
+							</div>
+							<div class="scc-form-checkbox">
+								<label class="scc-accordion_switch_button" for="feedback-opt-in">
+									<input onchange="document.querySelector('#survey-email-input-wrapper').classList.toggle('df-spl-d-none')" checked type="checkbox" id="feedback-opt-in">
+									<span class="scc-accordion_toggle_button round"></span>
+								</label>
+								<span><label for="feedback-opt-in" class="lblExtraSettingsEditCalc">I don't mind receiving a reply by email.</label>
+								</span>
+							</div>
+							<div class="">
+								<div id="comments-submit-btn" class="btn">Submit</div>
+							</div>
+						</div>
+					</div>
+					<div class="df-spl-euiModalFooter"></div>
+				</div>
+				<div class="step3-wrapper df-spl-d-none">
+					<div class="df-spl-euiModalHeader d-block mb-0">
+						<div class="df-spl-euiModalHeader__title">
+							<i style="vertical-align: sub;" class="material-icons-outlined bg-info rounded">check</i>
+							<span>Thanks for the feedback!</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -2620,7 +2693,7 @@ if ( array_key_exists( 'lang', $_REQUEST ) ) {
 		})
 		<?php
 		if ( ( get_option( 'spl_save_count' ) == $this->feedback_invokation( 'form' ) ) && $this->feedback_invokation( 'form' ) != 0 ) {
-			echo "jQuery('#userSurvey').removeClass('fade').show(300).trigger('show.bs.modal');";}
+			echo "setupSurveyModal(document.querySelector('#user-scc-sv'))";}
 		?>
 		window.splSettings = JSON.parse(jQuery('#spl_settings').html());
 		styleDropdown = jQuery('.sel1');

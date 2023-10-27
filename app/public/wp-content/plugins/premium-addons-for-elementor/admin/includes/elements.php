@@ -161,6 +161,13 @@ $elements = array(
 				'doc'   => Helper_Functions::get_campaign_link( 'https://premiumaddons.com/docs-category/using-widgets/grid/', 'settings-page', 'wp-dash', 'dashboard' ),
 			),
 			array(
+				'key'   => 'premium-media-wheel',
+				'name'  => 'premium-media-wheel',
+				'title' => __( 'Advanced Media Carousel', 'premium-addons-for-elementor' ),
+				'demo'  => Helper_Functions::get_campaign_link( 'https://premiumaddons.com/elementor-advanced-carousel-widget/', 'settings-page', 'wp-dash', 'dashboard' ),
+				'doc'   => Helper_Functions::get_campaign_link( 'https://premiumaddons.com/docs/elementor-advanced-media-carousel-widget/', 'settings-page', 'wp-dash', 'dashboard' ),
+			),
+			array(
 				'key'   => 'premium-image-scroll',
 				'name'  => 'premium-image-scroll',
 				'title' => __( 'Image Scroll', 'premium-addons-for-elementor' ),
@@ -785,6 +792,13 @@ $elements = array(
 				'doc'   => Helper_Functions::get_campaign_link( 'https://premiumaddons.com/docs/grid-widget-tutorial/', 'settings-page', 'wp-dash', 'dashboard' ),
 			),
 			array(
+				'key'   => 'premium-media-wheel',
+				'name'  => 'premium-media-wheel',
+				'title' => __( 'Advanced Media Carousel', 'premium-addons-for-elementor' ),
+				'demo'  => Helper_Functions::get_campaign_link( 'https://premiumaddons.com/elementor-advanced-carousel-widget/', 'settings-page', 'wp-dash', 'dashboard' ),
+				'doc'   => Helper_Functions::get_campaign_link( 'https://premiumaddons.com/docs/elementor-advanced-media-carousel-widget/', 'settings-page', 'wp-dash', 'dashboard' ),
+			),
+			array(
 				'key'   => 'premium-image-scroll',
 				'name'  => 'premium-image-scroll',
 				'title' => __( 'Image Scroll', 'premium-addons-for-elementor' ),
@@ -1292,6 +1306,10 @@ $elements = array(
 				'key'    => 'premium-global-badge',
 				'is_pro' => true,
 				'demo'   => Helper_Functions::get_campaign_link( 'https://premiumaddons.com/elementor-badge-global-addon/', 'settings-page', 'wp-dash', 'dashboard' ),
+			),
+            array(
+				'key'    => 'premium-shape-divider',
+				'demo'   => Helper_Functions::get_campaign_link( 'https://premiumaddons.com/elementor-animated-shape-divider-addon/', 'settings-page', 'wp-dash', 'dashboard' ),
 			),
 			array(
 				'key'  => 'premium-floating-effects',

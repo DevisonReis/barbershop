@@ -3,9 +3,9 @@ Contributors: Leap13, Rimoun
 Tags: elementor, elementor addons, widgets, elementor elements, templates
 Donate Link: https://premiumaddons.com/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme
 Requires at least: 5.0
-Tested Up To: 6.3
+Tested Up To: 6.3.2
 Requires PHP: 7.0
-Stable Tag: 4.10.7
+Stable Tag: 4.10.14
 License: GPL v3.0
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -20,14 +20,17 @@ Supercharge your [Elementor Page Builder](https://wordpress.org/plugins/elemento
 ### Useful Links
 [Support](https://my.leap13.com/contact-support/) | [Docs](https://premiumaddons.com/docs/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) | [Video Tutorials](https://www.youtube.com/channel/UCXcJ9BeO2sKKHor7Q9VglTQ) | [Facebook Group](https://facebook.com/groups/premiumAddons) | [Upgrade to Pro](https://premiumaddons.com/pro/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme)
 
+### New: Animated Shape Divider Addon
+Add animated shape dividers for Elementor flexbox containers, sections and columns. You can select between 40+ shape dividers or use a custom SVG code to add your own divider. [Check it out now!](https://premiumaddons.com/elementor-animated-shape-divider-addon/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
+
+### New: Advanced Media Carousel Widget
+You can now create carousel using images, videos, Elementor templates to create the carousel you want. Select between four animations and dozens of customization options. [Check it out now!](https://premiumaddons.com/elementor-advanced-carousel-widget/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
+
 ### New: TikTok Feed Widget
 We recently released the UNIQUE TikTok Feed widget that helps you to get feed from your TikTok accounts and show them as a grid, masonry or carousel. Select between 3 neat skins. [Check it out now!](https://premiumaddons.com/elementor-tiktok-feed-widget/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
 
-### New: Global Tooltips Addon
+### Global Tooltips Addon
 Add icon, image gallery, Lottie animation or Elementor template as a tooltip for any element. You can also use the tooltips addon to create a tour steps. [Check it out now!](https://premiumaddons.com/elementor-tooltip-global-addon/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
-
-### New: Pinterest Feed Widget
-Now, you can use the brand new Pinterest Feed widget to showcase your Pinterest pins and boards as a grid, masonry or carousel and select between 4 neat skins. [Check it out now!](https://premiumaddons.com/elementor-pinterest-feed-widget/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
 
 ### New: Magazine Bundle
 Smart Post Listing, Weather, World Clock, News Ticker, Tags Cloud and Recent Posts Notification widgets newly added to create the magazine website you ever dreamed. [Check it out now!](https://premiumaddons.com/elementor-news-magazine-widgets-bundle/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
@@ -65,10 +68,7 @@ Now, you will have the ability to copy and paste any content from a website to a
 ### Post and Page Duplicator
 Duplicate any post, page or template on your website with just ONE click. Check the documentation article from [here](https://premiumaddons.com/docs/how-to-use-pa-duplicator/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
 
-### Freehand Design Experience
-We've implemented freehand design experience in many widgets and addons to make it easier to design amazing layouts using your mouse.
-
-### 60+ Fully Customizable Widgets & Addons
+### 70+ Fully Customizable Widgets & Addons
 Besides adding new widgets on monthly bases, we don't mainly focus on the number, we focus on adding as much customization options to our widgets as possible more than anywhere else.
 
 ### Modular & Lightweight
@@ -112,6 +112,7 @@ Each widget and addon has been tested on different screen sizes, mobile devices,
 ### Image & Video Widgets
 * [**Site Logo Widget**](https://premiumaddons.com/elementor-site-logo-widget/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Create an attractive logo for your brand using an image, SVG shape, or Lottie Animation with tens of customization options.
 * [**Media Gallery Widget**](https://premiumaddons.com/grid-widget-for-elementor-page-builder/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(FREE)*: Highly customizable gallery widget that can be used for creating attractive looking image galleries and portfolios.
+* [**Advanced Media Carousel Widget**](https://premiumaddons.com/elementor-advanced-carousel-widget/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(FREE)*: Create advanced carousel using images, videos or Elementor templates. You can select between Coverflow, Flip, Flat and Infinite carousel effects.
 * [**Image Scroll Widget**](https://premiumaddons.com/elementor-image-scroll-widget/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(FREE)*: Allows you to represent your images in a brand new yet attractive way.
 * [**Image Comparison Widget**](https://premiumaddons.com/image-comparison-widget-for-elementor-page-builder/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Create vertical or horizontal image comparisons easily using this amazing widget.
 * [**Image Hotspots Widget**](https://premiumaddons.com/image-hotspots-widget-for-elementor-page-builder/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: The only Image Hotspots Widget with 100% freehand design experience. Add hotspots to your image using mouse drag n' drop.
@@ -126,6 +127,7 @@ Each widget and addon has been tested on different screen sizes, mobile devices,
 * [**Multi-Scroll Widget**](https://premiumaddons.com/multi-scroll-widget-for-elementor-page-builder/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: The only Elementor widget available that allows you to create attractive multi-scroll effect. It can be used to create full landing pages or use it inside any page.
 * [**Custom Mouse Cursor Global Addon**](https://premiumaddons.com/elementor-custom-mouse-cursor-global-feature/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Add a custom mouse cursor to any section, column, or widget. You can select between Font Awesome icon, custom SVGs, image or Lottie animation.
 * [**Magic Scroll Global Addon**](https://premiumaddons.com/elementor-magic-scroll-global-addon/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Create outstanding scroll animations to any column/widget with just few clicks and control every single detail in the animation scene.
+* [**Animated Shape Divier Addon**](https://premiumaddons.com/elementor-animated-shape-divider-addon/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(FREE)*: Create animated shape divider on containers, sections and columns. Select between tens of pre-made dividers or use your own.
 * [**Tooltips Global Addon**](https://premiumaddons.com/elementor-tooltip-global-addon/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(FREE)*: Add icon, image, Lottie animation or Elementor template as a tooltip for any Elementor container, section, column or widget element.
 * [**Badge Global Addon**](https://premiumaddons.com/elementor-badge-global-addon/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Add an icon, image, Lottie animation, or SVG blob shape badge to any section, column, or widget.
 * [**Animated Blob Generator**](https://premiumaddons.com/elementor-animated-blob-generator/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Add multiple animated blob layers to your sections with a wide range of smart customization options.
@@ -244,6 +246,43 @@ Premium Addonsis 100% Ads Free, Ads can only be detected from Youtube videos, th
 14. Premium Progress Bar Widget
 
 == Changelog ==
+
+= 4.10.14 =
+
+- Fixed: Slow issues in Animated Shape Divider addon.
+
+= 4.10.13 =
+
+- Fixed: PHP warning since v4.10.12
+
+= 4.10.12 =
+
+- New: Added Animated Shape Divier addon - [here](https://premiumaddons.com/elementor-animated-shape-divider-addon/).
+- Tweak: Testimonials widget rebuilt - [here](https://premiumaddons.com/testimonials-widget-for-elementor-page-builder/).
+- Tweak: Added option to control header/footer separator color in Modal Box widget.
+- Fixed: Fatal error with Woo Category Display Condition.
+
+= 4.10.11 =
+
+- Fixed: Fatal error when Contact Form 7 widget is existing on the page.
+
+= 4.10.10 =
+
+- Tweak: Advanced Media Carousel widget performance optimized.
+- Tweak: Added Styling controls for posts box in Recent Posts Notification widget.
+- Fixed: Header Overlap with Scroll After Pagination/Filter Tabs in Blog widget.
+- Fixed: Pinterest Boards not shown in Query tab.
+- Fixed: PHP v8.0 warning in Media Carousel widget.
+
+= 4.10.9 =
+
+- Tweak: Advanced Media Carousel JS code improved.
+- Fixed: Fatal error because of Carousel widget with newer versions of PHP.
+
+= 4.10.8 =
+
+- New: Added Advanced Media Carousel widget - [here](https://premiumaddons.com/elementor-advanced-carousel-widget/).
+- Tweak: Added 6 Form Presets and 5 Effects in Contact Form 7 Styler widget - [here](https://premiumaddons.com/contact-form-7-widget-for-elementor-page-builder/).
 
 = 4.10.7 =
 

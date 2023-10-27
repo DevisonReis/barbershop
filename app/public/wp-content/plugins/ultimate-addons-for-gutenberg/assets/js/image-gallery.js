@@ -231,7 +231,7 @@ const UAGBImageGalleryPagedGrid = {
 
 	getCustomURL( image, $attr ) {
 		const urlValidRegex = new RegExp(
-			'^((http|https)://)(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)$'
+			'^((http|https)://)(www.)?[a-zA-Z0-9@:%._\\+~#?&//=\\-]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)$'
 		);
 		const imageID = parseInt( image.getAttribute( 'data-spectra-gallery-image-id' ) );
 		return urlValidRegex.test( $attr?.customLinks[ imageID ] ) ? $attr.customLinks[ imageID ] : undefined;
@@ -324,7 +324,7 @@ const loadLightBoxImages = ( blockScope, lightboxSwiper, pageNum, attr, thumbnai
 	
 	const theBody = document.querySelector( 'body' );
 	const updateCounter = ( curPage ) => {
-		const lightbox = blockScope.nextElementSibling;
+		const lightbox = blockScope?.nextElementSibling;
 		const counter = lightbox.querySelector( '.spectra-image-gallery__control-lightbox--count-page' );
 		if ( counter ) {
 			counter.innerHTML = parseInt( curPage ) + 1;
@@ -345,8 +345,8 @@ const loadLightBoxImages = ( blockScope, lightboxSwiper, pageNum, attr, thumbnai
 		} );
 
 	}
-	if ( blockScope.nextElementSibling.classList.contains( 'spectra-image-gallery__control-lightbox' ) ) {
-		const lightbox = blockScope.nextElementSibling;
+	const lightbox = blockScope?.nextElementSibling;
+	if ( lightbox && lightbox?.classList.contains( 'spectra-image-gallery__control-lightbox' ) ) {
 		lightbox.addEventListener( 'keydown', ( event ) => {
 			if ( 27 === event.keyCode ) {
 				theBody.style.overflow = '';
@@ -378,7 +378,6 @@ const loadLightBoxImages = ( blockScope, lightboxSwiper, pageNum, attr, thumbnai
 		if ( ! lightboxSwiper ) {
 			return;
 		}
-		const lightbox = blockScope?.nextElementSibling;
 		if ( ! lightbox ) {
 			return;
 		}
